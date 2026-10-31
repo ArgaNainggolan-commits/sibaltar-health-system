@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Layanan Kesehatan SIBALTAR</title>
+    <link rel="icon" href="yaya.jpg" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+    <link rel="icon" href="yaya.jpg" type="image/jpeg">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+
+
+
+
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><img src="yaya.jpg" alt="Logo" class="navbar-logo me-2" style="background-image: none;">Layanan Kesehatan SIBALTAR</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto py-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan Dan Kesehatan</a>
+                        <ul class="dropdown-menu m-0">
+                            <li><a href="team.html" class="dropdown-item">Rumah Sakit</a></li>
+                            <li><a href="klinik.html" class="dropdown-item">Klinik</a></li>
+                            <li><a href="dokter.html" class="dropdown-item">Dokter Praktek</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex ms-auto" action="search.html" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search" name="query" style="width: 90px;">
+                    <button class="btn btn-outline-light" type="submit">Cari</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    
+    
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="pegawai tarutung.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Selamat Datang</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Cari yang Anda Perlukan</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="latar.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Kami Disini </h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Merawat Kesehatan Anda</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6"> 
+                    <div class="section-title position-relative pb-3 mb-5">
+                    </div>
+                    <p class="mb-4">Berita Kesehatan Terbaru untuk Anda. Dapatkan Informasi Terkini tentang Perawatan dan Inovasi Medis. Pahami Pentingnya Kesehatan Anda dan Pelajari Teknologi Perawatan yang Baru. Baca Berita, Berbagi Wawasan, dan Tingkatkan Kualitas Hidup Anda Bersama Kami.</p>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <button class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <span class="text-white">Read More</span>
+                        </button>
+                        <div class="ms-4">
+                            <p class="mb-2">s. Pahami Pentingnya Kesehatan Anda dan Pelajari Teknologi Perawatan yang Baru. </p>
+                            <div class="full-text" style="display: none;">
+                                 Kesehatan memberikan tanggapan bahwa Akses Fitur BPJS masih tahap proses perbaikan “ tambahnya.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="discount.jpg" alt="Kesehatan" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="section-title position-relative pb-3 mb-5">
+                    </div>
+                    <p class="mb-4">Adanya Limit Pembatasan Akses Fitur Aplikasi BPJS, Masyarakat yang berobat di RSUD Tarutung menumpuk belum terlayani.</p>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <button class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <span class="text-white">Read More</span>
+                        </button>
+                        <div class="ms-4">
+                            <p class="mb-2">Masyarakat Tapanuli Utara mengeluhkan adanya Limit Pembatasan Akses Fitur</p>
+                            <div class="full-text" style="display: none;">
+                                Masyarakat Tapanuli Utara mengeluhkan adanya Limit Pembatasan Akses Fitur Aplikasi BPJS, akibatnya layanan yang diberikan RSUD Tarutung terganggu, mulai dari Layanan Administrasi hingga Pelayanan Poliklinik. (Kamis,02/05)
+
+Adanya Pembatasan Akses oleh BPJS tersebut juga dikeluhkan oleh Direktur RSUD Tarutung dr. Janri A. Nababan,MM. “ benar, kami RSUD tarutung sangat menyayangkan terjadinya hal ini, kenapa pembatasan limit secara tiba tiba tanpa harus pemberitahuan dahulu, yang mengakibatkan akan mengganggu Pelayanan kami “, ungkapnya.
+Direktur RSUD tarutung juga menambahkan bahwa banyak masyarakat mengeluh terkait Limit Pembatasan Akses Fitur Aplikasi BPJS, karena banyak Masyarakat yang tempat tinggalnya jauh dan tranportasinya yang sangat terbatas. “ kami sudah banyak menerima pengaduan Masyarakat terkait aplikasi BPJS tidak bisa berjalan dengan baik, berhubung Masyarakat juga yang tempat tinggalnya jauh dan transportasi sangat terbatas “ ujarnya.
+Salah satu Masyarakat yang tidak ingin disebut namanya mengungkapkan keluhannya terhadap BPJS. “ saya dan orangtua saya sudah dari jam 10.00 Wib sampai jam 14.30 Wib belum juga dilayani, petugas administrasi mengatakan bahwa Aplikasi BPJS dalam perbaikan, padahal kampung saya sangat jauh”, keluhnya.
+Terkait dengan Solusi, Direktur RSUD tarutung mengatakan bahwa Pelayanan Administrasi akan dilaksanakan Manual. “ untuk Pelayanan Admnistrasi kita lakukan secara manual, dan untuk pelayanan Kesehatan yang tertunda ,pihak RSUD tarutung sudah memerintahkan pada semua dokter spesialis agar standby sampai pelayanan selesai semua, bukan hanya itu kita juga sudah membagikan Protio kepada masyarakat yang sudah menunggu lama, terkait dengan adanya pembatasan Limit Akses Fitur ini, pihak BPJS Kesehatan memberikan tanggapan bahwa Akses Fitur BPJS masih tahap proses perbaikan “ tambahnya.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="beritatrt.jpg" alt="Kesehatan" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const readMoreButtons = document.querySelectorAll('.d-flex > button');
+    
+        readMoreButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const fullText = button.nextElementSibling.querySelector('.full-text');
+            fullText.style.display = fullText.style.display === 'none' ? 'block' : 'none';
+          });
+        });
+      </script>
+    
+                
+    
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">Berita terkini</h5>
+                        <h1 class="mb-0">Kabar Sehat Terbaru</h1>
+                    </div>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="6630ba0ff29f0.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+   
+    <div class="container-fluid bg-dark text-light wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <h1 class="m-0 text-white"><i class="fa fa-envelope me-2"></i>Beri Masukan</h1>
+                        <form action="#" class="w-100 mt-3" onsubmit="event.preventDefault(); alert('Terima kasih atas masukan Anda!'); this.reset();">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Masukan Anda..." required>
+                                <button class="btn btn-dark px-4" type="submit">KIRIM</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0"></h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Toba Samosir</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">informasikesehatan@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Kelompok 7 Proyek Akhir Tahun</a>. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>
