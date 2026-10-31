@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hasil Pencarian - Layanan Kesehatan SIBALTAR</title>
+    <link rel="icon" href="yaya.jpg" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Layanan Kesehatan Siantar Balige Tarutung" name="keywords">
+    <meta content="Hasil pencarian informasi layanan kesehatan SIBALTAR" name="description">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .search-banner {
+            position: relative;
+            margin-bottom: 90px;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('praktek.jpg') center center no-repeat;
+            background-size: cover;
+        }
+        .search-banner .row {
+            position: relative;
+            z-index: 2;
+        }
+        .search-result-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 24px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .search-result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary);
+        }
+        .search-result-card h3 a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .search-result-card h3 a:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><img src="yaya.jpg" alt="Logo" class="navbar-logo me-2">Layanan Kesehatan SIBALTAR</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Beranda</a>
+                    <a href="about.html" class="nav-item nav-link">Tentang Kami</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan Dan Kesehatan</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="team.html" class="dropdown-item">Rumah Sakit</a>
+                            <a href="klinik.html" class="dropdown-item">Klinik</a>
+                            <a href="dokter.html" class="dropdown-item">Dokter Praktek</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="d-flex ms-auto my-3 my-lg-0" action="search.html" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="Cari..." aria-label="Search" name="query" style="width: 150px;">
+                    <button class="btn btn-outline-light" type="submit">Cari</button>
+                </form>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 search-banner">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Hasil Pencarian</h1>
+                    <p class="text-white-50">Menampilkan hasil pencarian untuk kata kunci yang Anda masukkan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Search Results Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">Hasil Pencarian</h5>
+                        <h2 class="mb-0" id="search-keyword-display">Menemukan hasil untuk kata kunci...</h2>
+                    </div>
+                    <div id="results">
+                        <!-- Results will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Results End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <h1 class="m-0 text-white"><i class="fa fa-envelope me-2"></i>Beri Masukan</h1>
+                        <form action="#" class="w-100 mt-3" onsubmit="event.preventDefault(); alert('Terima kasih atas masukan Anda!'); this.reset();">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Masukan Anda..." required>
+                                <button class="btn btn-dark px-4" type="submit">KIRIM</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Kontak Kami</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Toba Samosir</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">informasikesehatan@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Kelompok 7 Proyek Akhir Tahun</a>. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const searchResults = [
+            { title: "Beranda", description: "Halaman utama layanan kesehatan SIBALTAR", url: "index.html" },
+            { title: "Tentang Kami", description: "Informasi tentang layanan kesehatan SIBALTAR", url: "about.html" },
+            { title: "Rumah Sakit", description: "Daftar rumah sakit di layanan kesehatan SIBALTAR", url: "team.html" },
+            { title: "Klinik", description: "Informasi tentang klinik yang tersedia", url: "klinik.html" },
+            { title: "Klinik Kasih Husada (Klinik Gloria)", description: "Informasi tentang Klinik Kasih Husada / Klinik Gloria di Tarutung", url: "Klinik gloria.html" },
+            { title: "Klinik Bersatu Teguh", description: "Informasi tentang Klinik Bersatu Teguh di Siborong-Borong", url: "Bersatu teguh.html" },
+            { title: "Klinik Elshadai", description: "Informasi tentang Klinik Elshadai di Balige", url: "elshadai.html" },
+            { title: "Klinik Santa Katarina", description: "Informasi tentang Klinik Santa Katarina di Balige", url: "santa katarina.html" },
+            { title: "Klinik Santa Lusia", description: "Informasi tentang Klinik Santa Lusia di Siborong-Borong", url: "santa lusia.html" },
+            { title: "Dokter Praktek", description: "Daftar dokter praktek di layanan kesehatan SIBALTAR", url: "dokter.html" },
+            { title: "Dr. Dental", description: "Informasi tentang Dr. Dental", url: "dr dental.html" },
+            { title: "Dr. Gopas", description: "Informasi tentang Dr. Gopas", url: "dr gopas.html" },
+            { title: "Dr. Irwan", description: "Informasi tentang Dr. Irwan", url: "dr irwan.html" },
+            { title: "Dr. Karolina", description: "Informasi tentang Dr. Karolina", url: "dr karolina.html" },
+            { title: "Dr. OBGYN", description: "Informasi tentang Dr. OBGYN", url: "dr Obgyn.html" },
+            { title: "Dr. Sahat", description: "Informasi tentang Dr. Sahat", url: "dr sahat.html" },
+            { title: "Poli Anak Balige", description: "Pelayanan kesehatan anak di RS HKBP Balige SIBALTAR", url: "Poli Anak balige.html" },
+            { title: "Poli Anak Siantar", description: "Pelayanan kesehatan anak di RS Horas Insani Siantar SIBALTAR", url: "Poli Anak siantar.html" },
+            { title: "Poli Bedah Siantar", description: "Pelayanan bedah di RS Horas Insani Siantar SIBALTAR", url: "Poli Bedah siantar.html" },
+            { title: "Poli Bedah Umum Balige", description: "Pelayanan bedah umum di RS HKBP Balige SIBALTAR", url: "Poli Bedah Umum balige.html" },
+            { title: "Poli Gigi Balige", description: "Pelayanan kesehatan gigi di RS HKBP Balige SIBALTAR", url: "Poli GIGI balige.html" },
+            { title: "Poli Gigi Siantar", description: "Pelayanan kesehatan gigi di RS Horas Insani Siantar SIBALTAR", url: "Poli Gigi siantar.html" },
+            { title: "Poli Jantung Siantar", description: "Pelayanan kesehatan jantung di RS Horas Insani Siantar SIBALTAR", url: "Poli Jantung siantar.html" },
+            { title: "Poli Jantung Tarutung", description: "Pelayanan kesehatan jantung di RS Tarutung SIBALTAR", url: "POLI JANTUNG tarutung.html" },
+            { title: "Poli Jiwa Tarutung", description: "Pelayanan kesehatan jiwa di RS Tarutung SIBALTAR", url: "poli jiwa tarutung.html" },
+            { title: "Poli Kebidanan Dan Kandungan Balige", description: "Pelayanan kebidanan dan kandungan di RS HKBP Balige SIBALTAR", url: "Poli Kebidanan Dan Kandungan balige.html" },
+            { title: "Poli Kulit Dan Kelamin Tarutung", description: "Pelayanan kulit dan kelamin di RS Tarutung SIBALTAR", url: "POLI KULIT DAN KELAMIN tarutung.html" },
+            { title: "Poli Orthopaedi Siantar", description: "Pelayanan orthopaedi di RS Horas Insani Siantar SIBALTAR", url: "Poli Orthopaedi  siantar.html" },
+            { title: "Poli Paru Siantar", description: "Pelayanan kesehatan paru di RS Horas Insani Siantar SIBALTAR", url: "Poli Paru siantar.html" },
+            { title: "Poli Penyakit Dalam Balige", description: "Pelayanan penyakit dalam di RS HKBP Balige SIBALTAR", url: "Poli Penyakit Dalam balige.html" },
+            { title: "Poli Penyakit Dalam Siantar", description: "Pelayanan penyakit dalam di RS Horas Insani Siantar SIBALTAR", url: "Poli Penyakit Dalam siantar.html" },
+            { title: "Poli Saraf Siantar", description: "Pelayanan kesehatan saraf di RS Horas Insani Siantar SIBALTAR", url: "Poli Saraf siantar.html" },
+            { title: "Poli Syaraf Balige", description: "Pelayanan kesehatan syaraf di RS HKBP Balige SIBALTAR", url: "Poli Syaraf balige.html" },
+            { title: "Poli THT Siantar", description: "Pelayanan kesehatan THT di RS Horas Insani Siantar SIBALTAR", url: "Poli THT siantar.html" }
+        ];
+
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(function(part) {
+                const pair = part.split("=");
+                if (pair[0]) {
+                    params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+                }
+            });
+            return params;
+        }
+
+        function displayResults() {
+            const params = getQueryParams();
+            const query = params['query'] || '';
+            const resultsDiv = document.getElementById('results');
+            const keywordDisplay = document.getElementById('search-keyword-display');
+
+            if (query) {
+                keywordDisplay.innerText = `Menampilkan hasil pencarian untuk: "${query}"`;
+                const filteredResults = searchResults.filter(result =>
+                    result.title.toLowerCase().includes(query.toLowerCase()) ||
+                    result.description.toLowerCase().includes(query.toLowerCase())
+                );
+
+                if (filteredResults.length > 0) {
+                    resultsDiv.innerHTML = '';
+                    filteredResults.forEach(result => {
+                        const card = document.createElement('div');
+                        card.classList.add('search-result-card');
+                        card.innerHTML = `
+                            <h3><a href="${result.url}"><i class="fa fa-chevron-right me-2 small"></i>${result.title}</a></h3>
+                            <p class="mb-0 mt-2 text-muted">${result.description}</p>
+                        `;
+                        resultsDiv.appendChild(card);
+                    });
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div class="text-center py-5">
+                            <i class="fa fa-search-minus text-muted display-1 mb-4"></i>
+                            <h4>Tidak ada hasil ditemukan</h4>
+                            <p class="text-muted">Maaf, kami tidak menemukan informasi yang cocok untuk "${query}". Coba masukkan kata kunci yang berbeda.</p>
+                        </div>
+                    `;
+                }
+            } else {
+                keywordDisplay.innerText = 'Pencarian';
+                resultsDiv.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="fa fa-keyboard text-muted display-1 mb-4"></i>
+                        <h4>Silakan masukkan kata kunci</h4>
+                        <p class="text-muted">Gunakan kotak pencarian di navbar untuk mencari informasi layanan kesehatan.</p>
+                    </div>
+                `;
+            }
+        }
+
+        window.onload = displayResults;
+    </script>
+</body>
+
+</html>
